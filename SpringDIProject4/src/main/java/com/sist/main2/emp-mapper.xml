@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sist.main2.emp-mapper">
+	<sql id="select">
+	SELECT * FROM emp
+	</sql>
+	<select id="empAllData" resultType="EmpVO2">
+		<include refid="select"/>
+	</select>
+	<select id="empDetailData" resultType="EmpVO2" parameterType="int">
+	SELECT * FROM emp WHERE empno=#{empno}
+	</select>
+</mapper>
